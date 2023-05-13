@@ -36,11 +36,12 @@ docker compose up
 
 This builds the eclipse-based tool services e.g. OCL using maven and starts the services.
 ```
-cd ./educationplatform-docker/platformtools
+cd ./educationplatform-docker/platformtools/services
 mvn clean 
 mvn install
 ./launch.sh
 ```
+> Note that this can take some time to complete the first time the services are built.
 
 Further details of launching a tool service manually can be found in the platformtools [readme](https://github.com/mdenet/platformtools). 
 
