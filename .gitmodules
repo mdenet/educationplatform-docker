@@ -1,0 +1,9 @@
+[submodule "educationplatform"]
+	path = educationplatform
+	url = git@github.com:mdenet/educationplatform.git
+[submodule "educationplatform-examples"]
+	path = educationplatform-examples
+	url = git@github.com:mdenet/educationplatform-examples.git
+[submodule "platformtools"]
+	path = platformtools
+	url = git@github.com:mdenet/platformtools.git
