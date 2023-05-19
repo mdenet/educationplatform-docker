@@ -19,10 +19,19 @@ For eclipse based tool services that aren't yet fully dockerized:
 2. [Maven](https://maven.apache.org/) - version 3.9 tested
 
 ## Checkout the repository
-Use this command to clone the repository and all of its submodules.
+Use either command to clone the repository and all of its submodules.
+
+**Via https -**
+```
+git clone --recurse-submodules https://github.com/mdenet/educationplatform-docker.git
+```
+
+**Via ssh -** 
 ```
 git clone --recurse-submodules git@github.com:mdenet/educationplatform-docker.git
 ```
+
+> Note that for ssh access you must [configure](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) your account with a key.
 
 ## Build and run the docker image
 This builds the docker images and starts the platform servers.
