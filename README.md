@@ -37,22 +37,13 @@ git clone --recurse-submodules git@github.com:mdenet/educationplatform-docker.gi
 This builds the docker images and starts the platform servers.
 ```
 cd ./educationplatform-docker
-docker compose up
+
+docker build ./platformtools -t mdenet-tool-build:latest -f platformtools/services/Dockerfile  && \ 
+docker compose up --build 
 ```
 
+> Note it may take approximately 10 minutes the first time the platform is built.
 
-## Build and run eclipse-based tool services
-
-This builds the eclipse-based tool services e.g. OCL using maven and starts the services.
-```
-cd ./educationplatform-docker/platformtools/services
-mvn clean 
-mvn install
-./launch.sh
-```
-> Note that this can take some time to complete the first time the services are built.
-
-Further details of launching a tool service manually can be found in the platformtools [readme](https://github.com/mdenet/platformtools). 
 
 ## Access the platform
 
