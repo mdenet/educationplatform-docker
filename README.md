@@ -10,13 +10,12 @@ Any bugs, feature requests, or suggestions can be added to the [issue tracker](h
  1. [GIT](https://git-scm.com/)
  2. [Docker](https://www.docker.com/)
  3. [Docker Compose](https://docs.docker.com/compose/install/)
- 
 
-### Additional
-For eclipse based tool services that aren't yet fully dockerized:
+### System
+1. Disk space - 12 GB 
+2. Memory - 3 GB
 
-1. Java - OpenJDK version 19 tested
-2. [Maven](https://maven.apache.org/) - version 3.9 tested
+If using a linux based virtual machine, the minimum recommended settings of 3GB system memory and 30GB virtual disk should be used.
 
 ## Checkout the repository
 Use either command to clone the repository and all of its submodules.
@@ -48,3 +47,11 @@ docker compose up --build
 ## Access the platform
 
 Once docker is [running](#build-and-run-the-docker-image) the platform will be available at http://127.0.0.1:8080
+
+**403 Error**
+
+If a 403 forbidden permissions error is encountered, the permission of the files used in the docker volumes must be configured. For linux based system run the following command from the `educationplatform-docker` directory.
+
+``` 
+chmod -R 755 {public,educationplatform-examples} 
+```
