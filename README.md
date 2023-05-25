@@ -10,13 +10,12 @@ Any bugs, feature requests, or suggestions can be added to the [issue tracker](h
  1. [GIT](https://git-scm.com/)
  2. [Docker](https://www.docker.com/)
  3. [Docker Compose](https://docs.docker.com/compose/install/)
- 
 
-### Additional
-For eclipse based tool services that aren't yet fully dockerized:
+### System
+1. Disk space - 20 GB 
+2. Memory - 3 GB
 
-1. Java - OpenJDK version 19 tested
-2. [Maven](https://maven.apache.org/) - version 3.9 tested
+If using a linux based virtual machine, the minimum recommended settings of 3GB system memory and 30GB virtual disk should be used.
 
 ## Checkout the repository
 Use either command to clone the repository and all of its submodules.
@@ -37,23 +36,25 @@ git clone --recurse-submodules git@github.com:mdenet/educationplatform-docker.gi
 This builds the docker images and starts the platform servers.
 ```
 cd ./educationplatform-docker
-docker compose up
+
+docker compose up --build 
 ```
 
+> Note it may take approximately 10 minutes the first time the platform is built.
 
-## Build and run eclipse-based tool services
-
-This builds the eclipse-based tool services e.g. OCL using maven and starts the services.
-```
-cd ./educationplatform-docker/platformtools/services
-mvn clean 
-mvn install
-./launch.sh
-```
-> Note that this can take some time to complete the first time the services are built.
-
-Further details of launching a tool service manually can be found in the platformtools [readme](https://github.com/mdenet/platformtools). 
 
 ## Access the platform
 
-Once docker is [running](#build-and-run-the-docker-image) the platform will be available at http://127.0.0.1:8080
+Once docker has [started](#build-and-run-the-docker-image) the containers, the platform will be available at http://127.0.0.1:8080
+
+**403 Error**
+
+If a 403 forbidden permissions error is encountered, the permission of the files used in the docker volumes must be configured. For linux based system run the following command from the `educationplatform-docker` directory.
+
+``` 
+chmod -R 755 {public,educationplatform-examples} 
+```
+
+## Stopping the platform
+
+To safely stop the platform use `ctrl-c`  in the terminal running the platform.
