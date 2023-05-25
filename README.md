@@ -54,3 +54,7 @@ If a 403 forbidden permissions error is encountered, the permission of the files
 ``` 
 chmod -R 755 {public,educationplatform-examples} 
 ```
+
+## Stopping the platform
+
+To safely stop the platform use `ctrl - c`
