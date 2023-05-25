@@ -57,4 +57,4 @@ chmod -R 755 {public,educationplatform-examples}
 
 ## Stopping the platform
 
-To safely stop the platform use `ctrl - c`
+To safely stop the platform use `ctrl-c`  in the terminal running the platform.
