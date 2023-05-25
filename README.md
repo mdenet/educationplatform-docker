@@ -12,7 +12,7 @@ Any bugs, feature requests, or suggestions can be added to the [issue tracker](h
  3. [Docker Compose](https://docs.docker.com/compose/install/)
 
 ### System
-1. Disk space - 12 GB 
+1. Disk space - 20 GB 
 2. Memory - 3 GB
 
 If using a linux based virtual machine, the minimum recommended settings of 3GB system memory and 30GB virtual disk should be used.
@@ -37,7 +37,6 @@ This builds the docker images and starts the platform servers.
 ```
 cd ./educationplatform-docker
 
-docker build ./platformtools -t mdenet-tool-build:latest -f platformtools/services/Dockerfile  && \ 
 docker compose up --build 
 ```
 
@@ -46,7 +45,7 @@ docker compose up --build
 
 ## Access the platform
 
-Once docker is [running](#build-and-run-the-docker-image) the platform will be available at http://127.0.0.1:8080
+Once docker has [started](#build-and-run-the-docker-image) the containers, the platform will be available at http://127.0.0.1:8080
 
 **403 Error**
 
