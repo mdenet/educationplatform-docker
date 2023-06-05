@@ -7,7 +7,10 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-latest]
 
     steps:
       - uses: actions/checkout@v3
@@ -18,9 +21,16 @@ jobs:
         run : docker compose up --build -d
   
       - name: Sleep for 30 seconds
+        if: contains( ${{ matrix.os }}, 'ubuntu' )
         run: sleep 30s
         shell: bash
   
+      - name: Sleep for 30 seconds
+        if: contains( ${{ matrix.os }}, 'windows' )
+        run: Start-Sleep -s 30
+        shell: powershell
+
       - name: Stop the platform
         if: always()
         run: docker compose down
+        
