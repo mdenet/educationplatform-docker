@@ -3,7 +3,7 @@ name: build
 on:
   push:
     branches:
-      - 5-software-build-infrastructure-cicd-
+      - 5-software-build-infrastructure-cicd
 
 jobs:
   build:
