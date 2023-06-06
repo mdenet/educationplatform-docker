@@ -17,8 +17,8 @@ jobs:
         with:
           submodules: recursive
 
- #     - name: Docker build and run
- #       run : docker compose up --build -d
+      - name: Docker build and run
+        run : docker compose up --build -d
   
       - name: Sleep for 30 seconds
         if: contains( matrix.os, 'ubuntu' )
@@ -30,7 +30,7 @@ jobs:
         run: Start-Sleep -s 30
         shell: powershell
 
-#      - name: Stop the platform
-#        if: always()
-#        run: docker compose down
+      - name: Stop the platform
+        if: always()
+        run: docker compose down
         
