@@ -17,6 +17,30 @@ Any bugs, feature requests, or suggestions can be added to the [issue tracker](h
 
 If using a linux based virtual machine, the minimum recommended settings of 3GB system memory and 30GB virtual disk should be used.
 
+### Windows Preconfiguration
+If using Windows to run the platform, a few additional steps are required.
+
+- Enable long paths for git.
+```
+git config --global core.longpaths true
+```
+
+- If the mdenet/educationplatfom-docker repository has previously been checked out, you may have to clear submodule indexes so that file line endings re-normalised correctly.
+
+```
+git submodule foreach 'git rm --cached -r .'
+``` 
+
+- Ensure that the docker daemon is running by starting Docker Desktop from the start menu or by powershell command
+``` 
+& "C:\Program Files\Docker\Docker\Docker Desktop.exe" 
+```
+
+- Ensure that the docker is set to use the linux engine by right-clicking the Docker Desktop icon in the system tray menu and selecting use linux engine or by running the command 
+```
+C:\Program Files\Docker\Docker\DockerCli.exe -SwitchDaemon -SwitchLinuxEngine
+```
+
 ## Checkout the repository
 Use either command to clone the repository and all of its submodules.
 
