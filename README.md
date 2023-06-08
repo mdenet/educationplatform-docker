@@ -31,14 +31,17 @@ git config --global core.longpaths true
 git submodule foreach 'git rm --cached -r .'
 ``` 
 
-- Ensure that the docker daemon is running by starting Docker Desktop from the start menu or by powershell command
+- Ensure that the docker daemon is running by starting Docker Desktop from the start menu or by powershell command  
 ``` 
-& "C:\Program Files\Docker\Docker\Docker Desktop.exe" 
+& "[DOCKER_INSTALL_PATH]\Docker\Docker Desktop.exe" 
 ```
+where `DOCKER_INSTALL_PATH` is the path to install docker which  usually defaults to
+`C:\Program Files\Docker`.
+
 
 - Ensure that the docker is set to use the linux engine by right-clicking the Docker Desktop icon in the system tray menu and selecting use linux engine or by running the command 
 ```
-C:\Program Files\Docker\Docker\DockerCli.exe -SwitchDaemon -SwitchLinuxEngine
+[DOCKER_INSTALL_PATH]\Docker\DockerCli.exe -SwitchDaemon -SwitchLinuxEngine
 ```
 
 ## Checkout the repository
