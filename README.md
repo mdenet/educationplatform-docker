@@ -5,6 +5,9 @@ Further details on the platform can be found on the main [platform wiki page](ht
 
 Any bugs, feature requests, or suggestions can be added to the [issue tracker](https://github.com/mdenet/educationplatform/issues).
 
+[![MDENet education platform demo](https://img.youtube.com/vi/QHwYlqBQ-W0/hqdefault.jpg)](https://www.youtube.com/watch?v=QHwYlqBQ-W0)
+
+
 ## Prerequisites 
 ### Core
  1. [GIT](https://git-scm.com/)
