@@ -53,18 +53,10 @@ services:
           dockerfile: static.emf/Dockerfile
           
     mdenet-tool-xtext:
-        image: mdenet-tool-xtext:latest
-        ports:
-            - "8074:80"
-        build:
-            context: platformtools
-            dockerfile: static.xtext/Dockerfile
-               
-    mdenet-tool-xtext-service:
       image: mdenet-tool-xtext-service:latest
       ports: 
+          - 8074:8080
           - 10001:10001
-          - 9001:8080
           - 9000:9000
       build:
           context: platformtools
