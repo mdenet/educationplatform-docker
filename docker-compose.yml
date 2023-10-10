@@ -32,7 +32,7 @@ services:
         ports:
             - "8070:80"
         build:
-          context: ./platformtools
+          context: platformtools
           dockerfile: static.epsilon/Dockerfile
 
     mdenet-tool-emfatic:
