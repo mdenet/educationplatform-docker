@@ -11,6 +11,13 @@ services:
             - ./public/index.html:/usr/share/nginx/html/index.html
             - ./public/list.html:/usr/share/nginx/html/list.html
 
+    mdenet-tokenserver:
+        image: mdenet-tokenserver:latest
+        build:
+          context: educationplatform/tokenserver
+        ports:
+            - "10000:10000"
+
     mdenet-test-activities:
         image: "nginx:1.23"
         ports:
