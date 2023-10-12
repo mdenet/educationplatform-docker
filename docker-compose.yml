@@ -16,7 +16,9 @@ services:
         build:
           context: educationplatform/tokenserver
         ports:
-            - "10000:10000"
+            - "${TS_PORT}:${TS_PORT}"
+        environment:
+            - TS_PORT
 
     mdenet-test-activities:
         image: "nginx:1.23"
