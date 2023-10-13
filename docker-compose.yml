@@ -11,6 +11,15 @@ services:
             - ./public/index.html:/usr/share/nginx/html/index.html
             - ./public/list.html:/usr/share/nginx/html/list.html
 
+    mdenet-tokenserver:
+        image: mdenet-tokenserver:latest
+        build:
+          context: educationplatform/tokenserver
+        ports:
+            - "${TS_PORT}:${TS_PORT}"
+        environment:
+            - TS_PORT
+
     mdenet-test-activities:
         image: "nginx:1.23"
         ports:
@@ -25,7 +34,7 @@ services:
         ports:
             - "8070:80"
         build:
-          context: ./platformtools
+          context: platformtools
           dockerfile: static.epsilon/Dockerfile
 
     mdenet-tool-emfatic:
