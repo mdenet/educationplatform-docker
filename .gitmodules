@@ -1,9 +1,6 @@
 [submodule "educationplatform"]
 	path = educationplatform
 	url = ../educationplatform.git
-[submodule "educationplatform-examples"]
-	path = educationplatform-examples
-	url = ../educationplatform-examples.git
 [submodule "platformtools"]
 	path = platformtools
 	url = ../platformtools.git
