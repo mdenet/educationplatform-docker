@@ -20,6 +20,9 @@ Any bugs, feature requests, or suggestions can be added to the [issue tracker](h
 
 If using a linux based virtual machine, the minimum recommended settings of 3GB system memory and 30GB virtual disk should be used.
 
+### Mac Preconfiguration
+Docker on Mac defaults to 2GB of system memory which is not sufficient since Docker uses virtualisation to run containers on Mac. The minimum recommended value to use as the minimum Docker memory limit is 6GB. See the [Docker desktop documentation](https://docs.docker.com/desktop/settings/mac/) for further details on how to configure this.
+
 ### Windows Preconfiguration
 If using Windows to run the platform, a few additional steps are required.
 
@@ -84,6 +87,9 @@ If a 403 forbidden permissions error is encountered, the permission of the files
 ``` 
 chmod -R 755 {public,educationplatform-examples} 
 ```
+
+
+> Note - that browsers cache the platform pages so if changes are made to an activity or its files hard refresh should be used to reload the page by pressing `ctrl+F5` or `cmd+shift+R`. 
 
 ## Stopping the platform
 
