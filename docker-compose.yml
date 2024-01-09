@@ -34,13 +34,18 @@ services:
             - ./activities:/usr/share/nginx/html
         restart: unless-stopped
 
+    mdenet-tool-conversion:
+       image: mde-tool-conversion:latest
+       ports:
+          - "8069:80"
+       build:
+         context: platformtools
+         dockerfile: static.conversion/Dockerfile
+
     mdenet-tool-epsilon:
-        image: mdenet-tool-epsilon:latest
+        image: ghcr.io/epsilonlabs/playground-micronaut:0.1
         ports:
-            - "8070:80"
-        build:
-          context: platformtools
-          dockerfile: static.epsilon/Dockerfile
+            - "8070:8080"
         restart: unless-stopped
 
     mdenet-tool-emfatic:
