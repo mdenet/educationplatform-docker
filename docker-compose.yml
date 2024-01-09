@@ -11,6 +11,7 @@ services:
         volumes:
             - ./config/list-redirect.conf:/etc/nginx/conf.d/default.conf
             - ./public/list.html:/usr/share/nginx/html/list.html
+        restart: unless-stopped
 
     mdenet-tokenserver:
         image: mdenet-tokenserver:latest
@@ -21,6 +22,7 @@ services:
             - "${TS_PORT}:${TS_PORT}"
         environment:
             - TS_PORT
+        restart: unless-stopped
 
     mdenet-test-activities:
         image: "nginx:1.23"
@@ -30,6 +32,7 @@ services:
             - ./config/nginx.conf:/etc/nginx/nginx.conf
             - ./config/default.conf:/etc/nginx/conf.d/default.conf
             - ./activities:/usr/share/nginx/html
+        restart: unless-stopped
 
     mdenet-tool-conversion:
        image: mde-tool-conversion:latest
@@ -43,6 +46,7 @@ services:
         image: ghcr.io/epsilonlabs/playground-micronaut:0.1
         ports:
             - "8070:8080"
+        restart: unless-stopped
 
     mdenet-tool-emfatic:
         image: mdenet-tool-emfatic:latest
@@ -51,6 +55,7 @@ services:
         build:
           context: platformtools
           dockerfile: static.emfatic/Dockerfile
+        restart: unless-stopped
 
     mdenet-tool-ocl:
         image: mdenet-tool-ocl:latest
@@ -59,6 +64,7 @@ services:
         build:
           context: platformtools
           dockerfile: static.ocl/Dockerfile
+        restart: unless-stopped
 
     mdenet-tool-emf:
         image: mdenet-tool-emf:latest
@@ -67,6 +73,7 @@ services:
         build:
           context: platformtools
           dockerfile: static.emf/Dockerfile
+        restart: unless-stopped
           
     mdenet-tool-xtext:
       image: mdenet-tool-xtext-service:latest
@@ -77,5 +84,5 @@ services:
       build:
           context: platformtools
           dockerfile: xtext/Dockerfile
-          
+      restart: unless-stopped
           
