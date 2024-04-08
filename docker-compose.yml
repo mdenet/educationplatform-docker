@@ -22,6 +22,7 @@ services:
             - "${TS_PORT}:${TS_PORT}"
         environment:
             - TS_PORT
+            - TRUSTED_ORIGINS
         restart: unless-stopped
 
     mdenet-test-activities:
@@ -41,9 +42,11 @@ services:
        build:
          context: platformtools
          dockerfile: static.conversion/Dockerfile
+       restart: unless-stopped
 
+# Use micronaut service with customised endpoint names 
     mdenet-tool-epsilon:
-        image: ghcr.io/epsilonlabs/playground-micronaut:0.1
+        image: ghcr.io/epsilonlabs/playground-micronaut:0.2-mdenet
         ports:
             - "8070:8080"
         restart: unless-stopped
@@ -84,5 +87,7 @@ services:
       build:
           context: platformtools
           dockerfile: xtext/Dockerfile
+      environment:
+          - ES_DEPLOY_ADDRESS
       restart: unless-stopped
           
