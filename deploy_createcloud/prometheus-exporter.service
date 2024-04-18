@@ -1,0 +1,14 @@
+[Unit]
+Description=The node exporter for Promethius system logging
+After=network.target
+
+[Service]
+User=mdenet
+Group=mdenet
+ExecStart=${NODE_EXPORTER_PATH}/node_exporter --collector.disable-defaults --collector.cpu --collector.meminfo --collector.filesystem
+Type=exec
+Restart=always
+RestartSec=4
+
+[Install]
+WantedBy=network.target

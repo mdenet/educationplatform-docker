@@ -1,0 +1,15 @@
+[Unit]
+Description=Prometheus log resources
+After=network.target
+
+[Service]
+User=mdenet
+Group=mdenet
+WorkingDirectory=${PROMETHEUS_PATH}
+ExecStart=${PROMETHEUS_PATH}/prometheus
+Type=exec
+Restart=always
+RestartSec=4
+
+[Install]
+WantedBy=network.target

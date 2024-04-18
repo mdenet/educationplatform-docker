@@ -1,0 +1,14 @@
+[Unit]
+Description=Log stats monitor
+After=network.target
+
+[Service]
+User=ubuntu
+Group=ubuntu
+ExecStart=/bin/bash ${LOG_SCRIPT}
+Type=exec
+Restart=always
+RestartSec=4
+
+[Install]
+WantedBy=network.target
