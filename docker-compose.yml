@@ -41,12 +41,17 @@ services:
        build:
          context: platformtools
          dockerfile: static.conversion/Dockerfile
+       environment:
+          - BASE_URL=${BASE_URL}
 
     mdenet-tool-epsilon:
         image: ghcr.io/epsilonlabs/playground-micronaut:0.1
         ports:
             - "8070:8080"
         restart: unless-stopped
+        environment:
+            - BASE_URL=${BASE_URL}
+            - RELATIVE_URL_PATH: "/tools/epsilon/servicesc"
 
     mdenet-tool-emfatic:
         image: mdenet-tool-emfatic:latest
@@ -56,6 +61,9 @@ services:
           context: platformtools
           dockerfile: static.emfatic/Dockerfile
         restart: unless-stopped
+        environment:
+            - BASE_URL=${BASE_URL}
+            - RELATIVE_URL_PATH: "/tools/emfatic"
 
     mdenet-tool-ocl:
         image: mdenet-tool-ocl:latest
@@ -65,6 +73,9 @@ services:
           context: platformtools
           dockerfile: static.ocl/Dockerfile
         restart: unless-stopped
+        environment:
+            - BASE_URL=${BASE_URL}
+            - RELATIVE_URL_PATH: "/tools/ocl"
 
     mdenet-tool-emf:
         image: mdenet-tool-emf:latest
@@ -74,7 +85,9 @@ services:
           context: platformtools
           dockerfile: static.emf/Dockerfile
         restart: unless-stopped
-          
+        environment:
+            - BASE_URL=${BASE_URL}
+            - RELATIVE_URL_PATH: "/tools/conversion"
     mdenet-tool-xtext:
       image: mdenet-tool-xtext-service:latest
       ports: 
