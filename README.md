@@ -65,6 +65,18 @@ git clone --recurse-submodules git@github.com:mdenet/educationplatform-docker.gi
 
 > Note that for ssh access you must [configure](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) your account with a key.
 
+## Specify .env
+
+The ```env.example``` file lists variables (equally listed below) that need to be specified before building the platform. Those variables specify a base URL for the platform and a few extensions.
+
+The ```.env``` file contains URLs for running the platform on https://mdenet-dev.sites.er.kcl.ac.uk (the base URL in this case). When deploying the platform on a new server/with a new website, those variables will need to be changed.
+
+```
+TRUSTED_ORIGINS=[insert base URL, e. g., https://mdenet-dev.sites.er.kcl.ac.uk]
+ES_DEPLOY_ADDRESS=[insert base URL + /tools/xtext/editors]
+ES_ADDRESS=[insert base URL + /tools/xtext/project] 
+```
+
 ## Build and run the docker image
 This builds the docker images and starts the platform servers.
 ```
