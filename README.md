@@ -65,16 +65,20 @@ git clone --recurse-submodules git@github.com:mdenet/educationplatform-docker.gi
 
 > Note that for ssh access you must [configure](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) your account with a key.
 
-## Specify .env
+## Environment Variables
 
-The ```env.example``` file lists variables (equally listed below) that need to be specified before building the platform. Those variables specify a base URL for the platform and a few extensions.
+Before building the platform the ```env.example``` file should be renamed to ```.env``` and the environment variables listed below must be populated with relevant values listed below.
 
-The ```.env``` file contains URLs for running the platform on https://mdenet-dev.sites.er.kcl.ac.uk (the base URL in this case). When deploying the platform on a new server/with a new website, those variables will need to be changed.
+ + **TRUSTED_ORIGINS** comma delimited whitelist of base URLs (with no trailing slash) for CORS aware endpoints
+ + **ES_DEPLOY_ADDRESS** base URL + /tools/xtext/editors
+ + **ES_ADDRESS** base URL + /tools/xtext/project
+
+Here is an example of the ```.env``` file provided that the base URl of the platform server is https://ep.mde-network.org:
 
 ```
-TRUSTED_ORIGINS=[insert base URL, e. g., https://mdenet-dev.sites.er.kcl.ac.uk]
-ES_DEPLOY_ADDRESS=[insert base URL + /tools/xtext/editors]
-ES_ADDRESS=[insert base URL + /tools/xtext/project] 
+TRUSTED_ORIGINS=https://ep.mde-network.org
+ES_DEPLOY_ADDRESS=https://ep.mde-network.org/tools/xtext/editors
+ES_ADDRESS=https://ep.mde-network.org/tools/xtext/project
 ```
 
 ## Build and run the docker image
