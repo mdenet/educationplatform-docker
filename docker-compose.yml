@@ -107,5 +107,5 @@ services:
           - 3000:3000
       build:
           context: discovery-service
-          dockerfile: discovery-service/Dockerfile
+          dockerfile: Dockerfile
       restart: unless-stopped
