@@ -12,10 +12,13 @@ services:
         image: mdenet-educationplatform:latest
         ports:
             - "8080:80"
+        environment:
+            - TOKEN_SERVER_URL
         build:
           context: educationplatform
           dockerfile: ./platform/Dockerfile
-        
+          args: 
+              - TOKEN_SERVER_URL=$TOKEN_SERVER_URL
         volumes:
             - ./config/list-redirect.conf:/etc/nginx/conf.d/default.conf
             - ./public/list.html:/usr/share/nginx/html/list.html
@@ -106,6 +109,6 @@ services:
       ports: 
           - 3000:3000
       build:
-          context: discovery-service
-          dockerfile: Dockerfile
+          context: educationplatform
+          dockerfile: ./discovery-service/Dockerfile
       restart: unless-stopped
