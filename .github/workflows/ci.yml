@@ -13,7 +13,12 @@ jobs:
       - uses: actions/checkout@v3
         with:
           submodules: recursive
-
+      - name: Populate env file
+        run : |
+          sed -i 's#ES_DEPLOY_ADDRESS=#ES_DEPLOY_ADDRESS=http://127.0.0.1:8074/#' env.example
+          sed -i 's#TRUSTED_ORIGINS=#TRUSTED_ORIGINS=http://127.0.0.1#' env.example
+          sed -i 's#ES_ADDRESS=#ES_ADDRESS=http://127.0.0.1:10001/#' env.example
+          mv env.example .env
       - name: Docker build and run
         run : docker compose up --build -d
   
