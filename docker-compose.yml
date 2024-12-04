@@ -98,17 +98,10 @@ services:
           - ES_ADDRESS
       build:
           context: platformtools
+          platforms:
+              - "linux/amd64"
           dockerfile: xtext/Dockerfile
           args:
               - TRUSTED_ORIGINS=$TRUSTED_ORIGINS
               - ES_ADDRESS=$ES_ADDRESS          
-      restart: unless-stopped
-          
-    mdenet-service-discovery:
-      image: mdenet-service-discovery:latest
-      ports: 
-          - 3000:3000
-      build:
-          context: educationplatform
-          dockerfile: ./discovery-service/Dockerfile
       restart: unless-stopped
