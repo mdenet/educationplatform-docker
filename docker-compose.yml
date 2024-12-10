@@ -98,8 +98,6 @@ services:
           - ES_ADDRESS
       build:
           context: platformtools
-          platforms:
-              - "linux/amd64"
           dockerfile: xtext/Dockerfile
           args:
               - TRUSTED_ORIGINS=$TRUSTED_ORIGINS
