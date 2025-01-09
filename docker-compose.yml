@@ -4,10 +4,13 @@ services:
         image: mdenet-educationplatform:latest
         ports:
             - "8080:80"
+        environment:
+            - TOKEN_SERVER_URL
         build:
           context: educationplatform
           dockerfile: ./platform/Dockerfile
-        
+          args: 
+              - TOKEN_SERVER_URL=$TOKEN_SERVER_URL
         volumes:
             - ./config/list-redirect.conf:/etc/nginx/conf.d/default.conf
             - ./public/list.html:/usr/share/nginx/html/list.html
@@ -81,8 +84,14 @@ services:
           - 8074:8080
           - 10001:10001
           - 9000:9000
+      environment:
+          - TRUSTED_ORIGINS
+          - ES_DEPLOY_ADDRESS
+          - ES_ADDRESS
       build:
           context: platformtools
           dockerfile: xtext/Dockerfile
+          args:
+              - TRUSTED_ORIGINS=$TRUSTED_ORIGINS
+              - ES_ADDRESS=$ES_ADDRESS          
       restart: unless-stopped
-          
