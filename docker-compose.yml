@@ -102,4 +102,5 @@ services:
           args:
               - TRUSTED_ORIGINS=$TRUSTED_ORIGINS
               - ES_ADDRESS=$ES_ADDRESS          
+              - ES_DEPLOY_ADDRESS=$ES_DEPLOY_ADDRESS          
       restart: unless-stopped
