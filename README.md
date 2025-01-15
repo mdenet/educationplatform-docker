@@ -114,6 +114,5 @@ To safely stop the platform use `ctrl-c`  in the terminal running the platform.
 
 ## Deployment on a Server Behind a Load Balancer
 
-It is quite common to have a web server running behind a firewall or load balancer. In this scenario, the public IP of the server or the FQDN can only be accessed on either port 443 (HTTPS) or 80 (HTTP). Therefore, it is not possible to interact with containers that run on other ports of the server directly. 
+It is quite common to have a web server running behind a firewall or load balancer. In this scenario, the public IP of the server or the FQDN can only be accessed on either port 443 (HTTPS) or 80 (HTTP). Therefore, it is not possible to interact with containers that run on other ports of the server directly. To access the education platform and other containers, the reverse proxy container acts as a gateway and is pre-configured to listen on port 8080. The reverse proxy container can also be used when there is no load balancer.
 
-The containerised version of the platform can be deployed on a web server behind a load balancer using reverse proxy. For instance, an Nginx server can be configured to directly run on the host machine and map URL segments to ports so that each request is routed to the right container. 
