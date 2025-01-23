@@ -14,11 +14,13 @@ services:
             - "8081:80"
         environment:
             - TOKEN_SERVER_URL
+            - ES_WS_ADDRESS
         build:
           context: educationplatform
           dockerfile: ./platform/Dockerfile
           args: 
               - TOKEN_SERVER_URL=$TOKEN_SERVER_URL
+              - ES_WS_ADDRESS=$ES_WS_ADDRESS
         volumes:
             - ./config/list-redirect.conf:/etc/nginx/conf.d/default.conf
             - ./public/list.html:/usr/share/nginx/html/list.html
