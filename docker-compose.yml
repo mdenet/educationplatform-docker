@@ -58,7 +58,7 @@ services:
          dockerfile: static.conversion/Dockerfile
 
     mdenet-tool-epsilon:
-        image: ghcr.io/epsilonlabs/playground-micronaut:0.1
+        image: ghcr.io/epsilonlabs/playground-backend/ep-tool-server:epsilon2.8
         ports:
             - "8070:8080"
         restart: unless-stopped
