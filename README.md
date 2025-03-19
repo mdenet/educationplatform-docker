@@ -72,6 +72,8 @@ Before building the platform the ```env.example``` file should be renamed to ```
  + **TRUSTED_ORIGINS** comma delimited whitelist of base URLs (with no trailing slash) for CORS aware endpoints
  + **ES_DEPLOY_ADDRESS** base URL + /tools/xtext/editors
  + **ES_ADDRESS** base URL + /tools/xtext/project
+ + **TOKEN_SERVER_URL** base URL of the token server
+ + **WEBSOCKETS_URI** base URL + /tools/xtext/services/xtext/ws
 
 Here is an example of the ```.env``` file provided that the base URl of the platform server is https://ep.mde-network.org:
 
