@@ -79,6 +79,8 @@ Here is an example of the ```.env``` file provided that the base URl of the plat
 TRUSTED_ORIGINS=https://ep.mde-network.org
 ES_DEPLOY_ADDRESS=https://ep.mde-network.org/tools/xtext/editors
 ES_ADDRESS=https://ep.mde-network.org/tools/xtext/project
+TOKEN_SERVER_URL=https://ep.mde-network.org/
+WEBSOCKETS_URI=https://ep.mde-network.org/tools/xtext/services/xtext/ws
 ```
 
 ## Build and run the docker image
