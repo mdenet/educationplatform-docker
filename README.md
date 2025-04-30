@@ -8,6 +8,7 @@ Any bugs, feature requests, or suggestions can be added to the [issue tracker](h
 [![MDENet education platform demo](https://img.youtube.com/vi/QHwYlqBQ-W0/hqdefault.jpg)](https://www.youtube.com/watch?v=QHwYlqBQ-W0)
 
 
+
 ## Prerequisites 
 ### Core
  1. [GIT](https://git-scm.com/)
