@@ -55,7 +55,8 @@ services:
           - "8069:80"
        build:
          context: platformtools
-         dockerfile: static.conversion/Dockerfile
+         dockerfile: Dockerfile
+         target: toolservice-conversion
 
     mdenet-tool-epsilon:
         image: ghcr.io/epsilonlabs/playground-backend/ep-tool-server:epsilon2.8
@@ -69,7 +70,8 @@ services:
             - "8071:80"
         build:
           context: platformtools
-          dockerfile: static.emfatic/Dockerfile
+          dockerfile: Dockerfile
+          target: toolservice-emfatic
         restart: unless-stopped
 
     mdenet-tool-ocl:
@@ -78,7 +80,8 @@ services:
             - "8072:80"
         build:
           context: platformtools
-          dockerfile: static.ocl/Dockerfile
+          dockerfile: Dockerfile
+          target: toolservice-ocl
         restart: unless-stopped
 
     mdenet-tool-emf:
@@ -87,7 +90,8 @@ services:
             - "8073:80"
         build:
           context: platformtools
-          dockerfile: static.emf/Dockerfile
+          dockerfile: Dockerfile
+          target: toolservice-emf
         restart: unless-stopped
           
     mdenet-tool-xtext:
@@ -102,7 +106,8 @@ services:
           - ES_ADDRESS
       build:
           context: platformtools
-          dockerfile: xtext/Dockerfile
+          dockerfile: Dockerfile
+          target: toolservice-xtext
           args:
               - TRUSTED_ORIGINS=$TRUSTED_ORIGINS
               - ES_ADDRESS=$ES_ADDRESS          
